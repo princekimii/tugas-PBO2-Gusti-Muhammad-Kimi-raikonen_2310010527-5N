@@ -1,0 +1,149 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 18, 2025 at 02:41 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.1.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `pbo2__2310010527`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jenis`
+--
+
+CREATE TABLE `jenis` (
+  `id_jenis` varchar(20) NOT NULL,
+  `nama_jenis` varchar(100) NOT NULL,
+  `kuota` int(11) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `jenis`
+--
+
+INSERT INTO `jenis` (`id_jenis`, `nama_jenis`, `kuota`, `status`) VALUES
+('ohh', 'zeb', 2, 'aktif'),
+('yaak', 'kim', 2, 'aktif');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jurusan`
+--
+
+CREATE TABLE `jurusan` (
+  `id_jurusan` varchar(20) NOT NULL,
+  `nama_jurusan` varchar(100) NOT NULL,
+  `kuota` int(11) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `jurusan`
+--
+
+INSERT INTO `jurusan` (`id_jurusan`, `nama_jurusan`, `kuota`, `status`) VALUES
+('yaak', 'kim', 2, 'aktif');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kontak`
+--
+
+CREATE TABLE `kontak` (
+  `id_kontak` varchar(20) NOT NULL,
+  `npsn` varchar(20) DEFAULT NULL,
+  `nama_kontak` varchar(100) NOT NULL,
+  `no_kontak` varchar(20) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kontak`
+--
+
+INSERT INTO `kontak` (`id_kontak`, `npsn`, `nama_kontak`, `no_kontak`, `status`) VALUES
+('09', 'ni 2', 'zebi zeb', '08231', 'mahasiswa'),
+('1', '1234', 'kimi', '0821212111', 'aktif'),
+('10', '20', 'kimi', '25', 'aktif'),
+('20', '25', 'zebii', '081234', 'aktif'),
+('5', '1234', 'kimi', '0821212111', 'aktif'),
+('zeb', 'gemink', 'yaa', 'kgk', 'kwksowk');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `yayasan`
+--
+
+CREATE TABLE `yayasan` (
+  `npsn` varchar(20) NOT NULL,
+  `nama_yayasan` varchar(100) NOT NULL,
+  `alamat` text DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `yayasan`
+--
+
+INSERT INTO `yayasan` (`npsn`, `nama_yayasan`, `alamat`, `status`) VALUES
+('1001', 'yayasan hj zidan', 'jl teluk dalam', 'tutup'),
+('102', 'yayasan hj rian', 'jl turiram', 'tutup'),
+('1234', 'kimi', '0821212111', 'aktif'),
+('223', 'zeb zeb', 'beruntung', 'aktif'),
+('23', 'zebiii gemink', 'jalan beruntung', 'on'),
+('23100', 'zebii', 'beruntung jaya', 'on'),
+('9999', 'bagus', 'rawasari', 'on'),
+('beruntung', 'zeb', 'yoo', 'owwk');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `jenis`
+--
+ALTER TABLE `jenis`
+  ADD PRIMARY KEY (`id_jenis`);
+
+--
+-- Indexes for table `jurusan`
+--
+ALTER TABLE `jurusan`
+  ADD PRIMARY KEY (`id_jurusan`);
+
+--
+-- Indexes for table `kontak`
+--
+ALTER TABLE `kontak`
+  ADD PRIMARY KEY (`id_kontak`);
+
+--
+-- Indexes for table `yayasan`
+--
+ALTER TABLE `yayasan`
+  ADD PRIMARY KEY (`npsn`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
